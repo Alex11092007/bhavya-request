@@ -1,0 +1,116 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Bhavya Ji 🙂</title>
+
+<style>
+
+body{
+background:linear-gradient(120deg,#ff9a9e,#fad0c4);
+font-family:Arial;
+text-align:center;
+overflow:hidden;
+color:white;
+}
+
+h1{
+margin-top:120px;
+font-size:45px;
+}
+
+#text{
+font-size:24px;
+margin-top:20px;
+}
+
+button{
+padding:12px 25px;
+font-size:20px;
+margin:20px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+transition:0.3s;
+}
+
+#yes{
+background:green;
+color:white;
+}
+
+#no{
+background:#444;
+color:white;
+}
+
+#yes:hover{
+transform:scale(1.2);
+}
+
+.heart{
+position:fixed;
+bottom:-10px;
+font-size:22px;
+animation:float 6s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(0);}
+100%{transform:translateY(-900px);}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h1>Hi Bhavya Ji 🙂</h1>
+
+<div id="text"></div>
+
+<button onclick="yes()">Yes, we can be friends 🙂</button>
+<button onclick="no()">Better not</button>
+
+<script>
+
+var message="I respect that you are committed. I just wanted to ask politely... Can we talk as normal friends?";
+var i=0;
+
+function typing(){
+if(i<message.length){
+document.getElementById("text").innerHTML+=message.charAt(i);
+i++;
+setTimeout(typing,60);
+}
+}
+
+typing();
+
+function yes(){
+document.body.innerHTML="<h1>Thank you 🙂</h1><h2>I promise to respect boundaries and stay a good friend.</h2>";
+}
+
+function no(){
+document.body.innerHTML="<h1>I understand 🙂</h1><h2>I respect your decision and wish you happiness.</h2>";
+}
+
+setInterval(function(){
+
+var heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="💙";
+heart.style.left=Math.random()*100+"vw";
+
+document.body.appendChild(heart);
+
+setTimeout(function(){
+heart.remove();
+},6000);
+
+},400);
+
+</script>
+
+</body>
+</html>
